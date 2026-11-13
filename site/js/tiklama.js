@@ -1,0 +1,1 @@
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('#cpMic');if(!b)return;const v=b.dataset.mid||'';try{navigator.clipboard.writeText(v);b.textContent='✓ Kopyalandı';setTimeout(()=>b.textContent='📋 Kopyala',1500);}catch(_){prompt('Micup ID',v);}});
