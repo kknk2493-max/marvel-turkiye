@@ -62,7 +62,7 @@
             <canvas data-art="2"></canvas><span class="cap tl">Bu hafta öne çıkan</span><span class="pow">YENİ!</span>
             <b class="cpt">Kahraman Kartları<small>37 kahraman · 2-4 kişi online oda</small></b>
           </button>
-          <div class="cp cp-cd"><span class="cap tl">Hafta bitiyor!</span><b id="hCd">--</b><span class="mono">Pazar 23:59 hafta kapanır · Pazar 00:00 yeni hafta başlar</span></div>
+          <div class="cp cp-cd"><span class="cap tl">Hafta bitiyor!</span><b id="hCd">--</b><span class="mono">Pazar 00:00'da hafta kapanır, yeni hafta başlar</span></div>
           <div class="cp cp-hud" id="hud">
             <div><span class="mono">Micup sunucusu</span><b id="hMembers">…<small>üye</small></b></div>
             <div><span class="mono">Oyun salonu</span><b>06<small>oyun</small></b></div>
@@ -81,7 +81,7 @@
     <section class="band">
       <div class="wrap">
         <div class="sh"><div><div class="mono">Bu hafta</div><h2>Öne <span class="o">çıkan</span></h2></div>
-          <p class="sub">Her hafta bir oyun öne çıkar. Sezon pazar gecesi 23:59'da kapanır, birinci olan oyuncu rolünü alır.</p></div>
+          <p class="sub">Her hafta bir oyun öne çıkar. Her Pazar 00:00'da haftanın birincisi belli olur ve rolünü alır. 4 haftada bir sezon kapanır.</p></div>
         <div class="feat">
           <button class="panel fgame" type="button" data-game="cards">
             <div class="poster"><canvas data-art="2"></canvas><span class="tag live mono"><i></i>Yeni · 3D</span><span class="num">03</span></div>
@@ -89,7 +89,7 @@
               <div class="metas mono"><span>37 kahraman</span><span>2-4 oyuncu</span><span>Online oda</span></div></div>
           </button>
           <div class="panel season">
-            <div class="top"><span class="mono dim">Haftanın bitmesine</span><div class="cd" id="cd"><div><b>0</b><small>gün</small></div><div><b>00</b><small>saat</small></div><div><b>00</b><small>dakika</small></div><div><b>00</b><small>saniye</small></div></div></div>
+            <div class="top"><span class="mono dim">Sezonun bitmesine (Pazar 00:00)</span><div class="cd" id="cd"><div><b>0</b><small>gün</small></div><div><b>00</b><small>saat</small></div><div><b>00</b><small>dakika</small></div><div><b>00</b><small>saniye</small></div></div></div>
             <div class="mini" id="mini"></div>
           </div>
         </div>
@@ -102,7 +102,7 @@
         <div class="steps" id="steps"><span class="rail" id="rail"></span>
           <div class="st"><span class="n">ADIM 01</span><h4>Micup ile giriş</h4><p>Micup hesabınla tek tıkla girersin. Sitede Micup kullanıcı adınla ve avatarınla görünürsün.</p></div>
           <div class="st"><span class="n">ADIM 02</span><h4>Oyna, puan topla</h4><p>Hız ve doğruluk puan getirir. Puanların hesabına yazılır, herkes aynı tabloda yarışır.</p></div>
-          <div class="st"><span class="n">ADIM 03</span><h4>Rolünü al</h4><p>Pazar 23:59'da haftanın birincisine Micup sunucusunda "Haftanın Marvel'ı" rolü otomatik verilir.</p></div>
+          <div class="st"><span class="n">ADIM 03</span><h4>Rolünü al</h4><p>Pazar 00:00'da haftanın birincisine Micup sunucusunda "Haftanın Marvel'ı" rolü otomatik verilir.</p></div>
         </div>
       </div>
     </section>
@@ -168,7 +168,7 @@
             <img class="badge" src="img/98a75cdf8e.webp" alt="" style="width:96px;height:96px;filter:drop-shadow(4px 4px 0 #07060b)">
             <span class="role">Micup rolü</span>
             <h3>Haftanın Marvel'ı</h3>
-            <p>Pazar 23:59'da sıralama kapanır. Birinci olan oyuncuya bot bu rolü otomatik verir, geçen haftanın birincisinden rol geri alınır.</p>
+            <p>Her Pazar 00:00'da haftalık sıralama kapanır. Birinci olan oyuncuya bot bu rolü otomatik verir, geçen haftanın birincisinden rol geri alınır.</p>
             <p>Yetkili kanalına kazananın adı ve puanıyla bildirim düşer.</p>
             <a class="btn w" href="#oyunlar" data-go="oyunlar" style="align-self:flex-start;height:48px;font-size:17px" data-mag><span class="bl"><span>Puan topla</span><span>Puan topla</span></span></a>
           </aside>
