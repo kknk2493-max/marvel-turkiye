@@ -1,0 +1,12 @@
+Marvel Türkiye güncellemesi
+
+1) "site" klasörünün İÇİNDEKİLERİ kknk2493-max/marvel-turkiye GitHub reposuna yükle, eskilerin üstüne yaz.
+   ("apps-script" klasörünü ve bu dosyayı repoya KOYMA.)
+
+2) "apps-script/Code.gs" dosyasını clasp-micup projesine koy, clasp push yap,
+   mevcut web app deployment'ını yeni sürümle güncelle (yeni URL oluşturma).
+
+3) Apps Script > Tetikleyiciler: "weeklyReset" fonksiyonu için her Pazar
+   gece yarısı - 01:00 arası çalışan haftalık tetikleyici olsun. Yoksa ekle.
+
+Gizli anahtarları koda, commit'e veya sohbete yazma.
