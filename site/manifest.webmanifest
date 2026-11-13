@@ -1,0 +1,55 @@
+{
+  "name": "Marvel Türkiye",
+  "short_name": "Marvel TR",
+  "description": "Marvel Türkiye topluluk oyun salonu — RAVONİA GAME",
+  "lang": "tr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0A0912",
+  "theme_color": "#0A0912",
+  "icons": [
+    {
+      "src": "mt-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "mt-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "mt-logo-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Oyunlar",
+      "url": "./#oyunlar",
+      "icons": [
+        {
+          "src": "mt-logo-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Sıralama",
+      "url": "./#siralama",
+      "icons": [
+        {
+          "src": "mt-logo-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "id": "./"
+}
