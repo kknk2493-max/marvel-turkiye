@@ -1,7 +1,7 @@
 // Marvel Türkiye — uygulama (PWA) servis çalışanı
 // Sayfa, css ve js: önce internetten en yenisi, internet yoksa kayıtlı hâli.
 // Resim ve sesler: bir kez indirilir, sonra hep telefondan/bilgisayardan açılır (sunucu kotası harcanmaz).
-const CACHE = 'mt-v16';
+const CACHE = 'mt-v17';
 const CORE = ['./', './index.html', './css/site.css', './js/app.js', './js/ekonomi.js', './manifest.webmanifest', './mt-logo-192.png', './mt-logo-512.png'];
 
 self.addEventListener('install', e => {
