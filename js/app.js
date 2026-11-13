@@ -1,5 +1,9 @@
 
 (function(){
+/* online bağlantı: birden çok STUN sunucusu (farklı ağlardaki oyuncular birbirini daha kolay bulsun) */
+(function(){ const P=window.Peer; if(typeof P!=='function'||P.__mt) return; const ICE={config:{iceServers:[{urls:['stun:stun.l.google.com:19302','stun:stun1.l.google.com:19302','stun:stun2.l.google.com:19302']},{urls:'stun:stun.cloudflare.com:3478'}]}};
+  const W=function(id,opt){ if(id&&typeof id==='object'){ opt=id; id=undefined; } const o=Object.assign({},ICE,opt||{}); return new P(id,o); };
+  W.prototype=P.prototype; W.__mt=1; try{ window.Peer=W; }catch(e){} })();
 const ASSETS={sfx:'audio/sfx.mp3',music:'audio/music.mp3'}; const fetchBuf=u=>fetch(u).then(r=>{ if(!r.ok) throw new Error('ses yüklenemedi'); return r.arrayBuffer(); });
 const G=window.gsap, ST=window.ScrollTrigger; if(G&&ST) G.registerPlugin(ST);
 const MTSET=(()=>{ try{ return JSON.parse(localStorage.getItem('mt_set')||'{}')||{}; }catch(e){ return {}; } })(); // kullanıcı ayarları (Ayarlar penceresi)
@@ -5785,20 +5789,20 @@ const INV_CSS=`
 (function(){
   const RC={b:'#C8834A',g:'#D5DAE4',a:'#FFB627',e:'#FF3B4E'}, RN={b:'BRONZ',g:'NADİR',a:'EPİK',e:'EFSANE'}, RO={b:0,g:1,a:2,e:3};
   const st=document.createElement('style'); st.textContent=`
-  .lt{position:fixed;inset:0;z-index:9000;overflow:hidden;color:#fff;font-family:var(--body);user-select:none;-webkit-user-select:none;touch-action:none;--gc:#ffd34d;--s:1;animation:ltIn .35s ease-out both}
+  .mtloot{position:fixed;inset:0;z-index:9000;overflow:hidden;color:#fff;font-family:var(--body);user-select:none;-webkit-user-select:none;touch-action:none;--gc:#ffd34d;--s:1;animation:ltIn .35s ease-out both}
   @keyframes ltIn{from{opacity:0}}
-  .lt.out{animation:ltOut .3s ease-in both}
+  .mtloot.out{animation:ltOut .3s ease-in both}
   @keyframes ltOut{to{opacity:0}}
   .lt-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 58%,color-mix(in srgb,var(--gc) 26%,#141026) 0%,#0b0916 55%,#040308 100%);transition:background .6s}
   .lt-floor{position:absolute;left:-30%;right:-30%;bottom:-8%;height:46%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 2px,transparent 2px 80px),repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 80px);transform:perspective(600px) rotateX(64deg);transform-origin:50% 100%;-webkit-mask-image:linear-gradient(transparent,#000 70%);mask-image:linear-gradient(transparent,#000 70%);opacity:.7}
   .lt-rays{position:absolute;left:50%;top:46%;width:190vmax;height:190vmax;margin:-95vmax 0 0 -95vmax;background:repeating-conic-gradient(from 0deg,color-mix(in srgb,var(--gc) 55%,transparent) 0deg 7deg,transparent 7deg 18deg);-webkit-mask-image:radial-gradient(circle,#000 0,transparent 62%);mask-image:radial-gradient(circle,#000 0,transparent 62%);animation:ltSpin 22s linear infinite;opacity:.12;transition:opacity .5s;pointer-events:none}
-  .lt.hot .lt-rays{opacity:.55}
+  .mtloot.hot .lt-rays{opacity:.55}
   @keyframes ltSpin{to{transform:rotate(360deg)}}
   .lt-cv{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:6}
   .lt-flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#fff,color-mix(in srgb,var(--gc) 70%,#fff) 30%,transparent 72%);opacity:0;pointer-events:none;z-index:7}
   .lt-flash.go{animation:ltFl .7s ease-out}
   @keyframes ltFl{0%{opacity:0}12%{opacity:1}100%{opacity:0}}
-  .lt.shk{animation:ltShk .45s}
+  .mtloot.shk{animation:ltShk .45s}
   @keyframes ltShk{0%,100%{transform:none}15%{transform:translate(-9px,5px)}30%{transform:translate(8px,-6px)}45%{transform:translate(-6px,-4px)}60%{transform:translate(5px,4px)}80%{transform:translate(-3px,2px)}}
   .lt-top{position:absolute;left:0;right:0;top:0;z-index:9;display:flex;align-items:center;gap:10px;padding:calc(14px + env(safe-area-inset-top,0px)) 16px 10px}
   .lt-title{flex:1;font-family:var(--display);font-size:clamp(20px,5vw,30px);letter-spacing:.05em;text-transform:uppercase;text-shadow:0 3px 0 rgba(0,0,0,.6)}
@@ -5809,8 +5813,8 @@ const INV_CSS=`
   .lt-tip:empty{display:none}
   @keyframes ltPulse{50%{transform:scale(1.07);opacity:.75}}
   .lt-scene{position:absolute;left:50%;top:56%;width:0;height:0;z-index:3;transform:scale(var(--s));transition:top .6s cubic-bezier(.3,1.2,.4,1),transform .6s cubic-bezier(.3,1.2,.4,1),opacity .4s}
-  .lt.rew .lt-scene{top:79%;transform:scale(calc(var(--s)*.62))}
-  .lt.sum .lt-scene{opacity:0;transform:scale(calc(var(--s)*.3)) translateY(300px);pointer-events:none}
+  .mtloot.rew .lt-scene{top:79%;transform:scale(calc(var(--s)*.62))}
+  .mtloot.sum .lt-scene{opacity:0;transform:scale(calc(var(--s)*.3)) translateY(300px);pointer-events:none}
 
   /* ---------- 3B KASA ---------- */
   .ch-wrap{position:absolute;left:0;top:0;width:0;height:0;--w:230px;--h:118px;--d:150px;--r:75px;--open:0deg}
@@ -6015,7 +6019,7 @@ const INV_CSS=`
   let cur=null;
   function mount(title,sub,col){
     if(cur) cur.kill();
-    const el=document.createElement('div'); el.className='lt'; el.id='loot'; el.setAttribute('role','dialog'); el.setAttribute('aria-label',title); el.style.setProperty('--gc',col);
+    const el=document.createElement('div'); el.className='mtloot'; el.id='loot'; el.setAttribute('role','dialog'); el.setAttribute('aria-label',title); el.style.setProperty('--gc',col);
     el.innerHTML=`<div class="lt-bg"></div><div class="lt-floor"></div><div class="lt-rays"></div>
       <div class="lt-scene" id="ltScene"></div><div class="lt-show" id="ltShow"></div><canvas class="lt-cv"></canvas><div class="lt-flash" id="ltFlash"></div>
       <div class="lt-top"><span class="lt-title">${esc(title)}<small>${esc(sub||'')}</small></span><button class="lt-skip" id="ltSkip" type="button">Geç ⏭</button></div>
